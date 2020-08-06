@@ -8,9 +8,7 @@ from django.conf import settings
 
 
 def index(request):
-    return HttpResponse(
-        "Hello, Welcome to the weather App." + settings.OPENWEATHERAPIKEY
-    )
+    return HttpResponse("Hello, Welcome to the weather App.")
 
 
 def forcast(request, cityname, period):
