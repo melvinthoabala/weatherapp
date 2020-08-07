@@ -24,14 +24,16 @@ def forcast(request, cityname, period):
             "lon": location.longitude,
             "units": "metric",
             "appid": settings.OPENWEATHERAPIKEY,
-            "exclude": "hourly",
         }
         city_weather = requests.get(url, payload).json()
 
         temperatures = []
         humidity = []
-        for day in city_weather["daily"]:
-            temperatures.append(day["temp"]["day"])
+        for day in city_weather[period]:
+            if period == "hourly":
+                temperatures.append(day["temp"])
+            else:
+                temperatures.append(day["temp"]["day"])
             humidity.append(day["humidity"])
         results = {
             "humidity": {
