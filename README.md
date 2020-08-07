@@ -9,13 +9,15 @@ where period can be:
 `daily` which shows averages of the next 7 days or `hourly` - which returns average of next 48 hours
 
 Running the app 
+``` 
 create a virtual environment
 `python3 -m venv env`
 `source env/bin/activate`
 Install required modules
 `pip install -r requirements.txt`
 The to run the app
-`python3 manage.py runserver`
+`python3 manage.py runserver` 
+```
 
 Note:
 The apps assumes memchached is running on `127.0.0.1:11211`
