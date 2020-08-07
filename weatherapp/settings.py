@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "weatherapi",
+    "django_memcached",
 ]
 
 MIDDLEWARE = [
@@ -116,3 +117,10 @@ STATIC_URL = "/static/"
 
 # This should be stored as a secret the we can use something like mozilla SOPS
 OPENWEATHERAPIKEY = "55e9f7e492556e0bdd16ace086b49e64"
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.memcached.MemcachedCache",
+        "LOCATION": "127.0.0.1:11211",
+    }
+}
