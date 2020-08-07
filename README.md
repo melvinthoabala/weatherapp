@@ -15,7 +15,7 @@ create a virtual environment
 `source env/bin/activate`
 Install required modules
 `pip install -r requirements.txt`
-The to run the app
+Then to run the app
 `python3 manage.py runserver` 
 ```
 
