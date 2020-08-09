@@ -78,3 +78,4 @@ def construct_weather_data_response(city_weather,period):
         },
     }
     return results
+    
